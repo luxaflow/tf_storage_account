@@ -17,7 +17,7 @@ Module will deploy Azure Storage Account and Storage Tables or Containers
 ---
 ```hcl
 module "storage_account" {
-  source = "github.com/luxaflow/tf_storage_account"
+  source = "github.com/luxaflow/tf_storage_account.git"
 
   name              = "my-storageaccount"
   resource_group    = "my-resourcegroup"
