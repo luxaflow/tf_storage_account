@@ -8,6 +8,7 @@ Module will deploy Azure Storage Account and Storage Tables or Containers
 - `location` - location of the Storage Account (default: westeurope)
 - `tier` - Storage account tier (default: Standard)
 - `replication_type` - Storage Account replication type (default: LRS)
+- `soft_delete_retention_days` - Number of days retention policy should be set to (default: null)
 - `containers` - list of Objects for the Storage Account Contianers
   - `name` - Name of the container
   - `access_type` - Access type for the contiainer
@@ -19,11 +20,12 @@ Module will deploy Azure Storage Account and Storage Tables or Containers
 module "storage_account" {
   source = "github.com/luxaflow/tf_storage_account"
 
-  name              = "my-storageaccount"
-  resource_group    = "my-resourcegroup"
-  location          = "westeurope"
-  tier              = "Standard"
-  replication_type  = "LRS"
+  name                        = "my-storageaccount"
+  resource_group              = "my-resourcegroup"
+  location                    = "westeurope"
+  tier                        = "Standard"
+  replication_type            = "LRS"
+  soft_delete_retention_days  = 30
 
   containers = [
     {

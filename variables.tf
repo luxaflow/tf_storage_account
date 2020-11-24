@@ -26,6 +26,12 @@ variable "replication_type" {
   description = "Replication type set for the storage account"
 }
 
+variable "soft_delete_retention_days" {
+  type        = number
+  default     = null
+  description = "Amount of days to to be set for soft delete retention"
+}
+
 variable "containers" {
   type        = list(object({
     name        = string
